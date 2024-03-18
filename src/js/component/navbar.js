@@ -4,15 +4,15 @@ import startWarsimg from "../../img/start-wars.jpg";
 
 export const Navbar = () => {
 	return (
-		<div classNameName="container">
-			<nav classNameName="navbar navbar-light bg-light mb-3">
+		<div className="container">
+			<nav className="navbar navbar-light bg-light mb-3">
 				<Link to="/">
-					<span classNameName="navbar-brand mb-0 h1"> <img src={startWarsimg} style={{ width: '100px', height: '100px,' }} />  </span>
+					<span className="navbar-brand mb-0 h1"> <img src={startWarsimg} style={{ width: '100px', height: '10px,' }} />  </span>
 				</Link>
-				<div classNameName="ml-auto">
+				<div className="ml-auto">
 					<div className="dropdown">
-						<a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Dropdown link
+						<a className="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Favorites
 						</a>
 
 						<ul className="dropdown-menu">
