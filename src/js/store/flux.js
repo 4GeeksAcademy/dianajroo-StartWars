@@ -2,7 +2,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characters: [],
-            apiBase: "https://www.swapi.tech/api/",
+
+			planets: [],
+			
 
 			demo: [
 				{
@@ -43,20 +45,42 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getCharacters: async () => {
-               fetch ('${getStore().apiBase}/people')
-            .then ((response) => response.json())
-			.then ((data) => {
-				for (let item of data.results){
-					fetch(item.url)
+				fetch('https://www.swapi.tech/api/people')
 					.then((response) => response.json())
 					.then((data) => {
-						setStore({characters: [...getStore().characters, data.results]})
-					}).catch((err)=> {console.log(err)})
-				}
-				
-			})
+						for (let item of data.results) {
+							fetch(item.url)
+								.then((response) => response.json())
+								.then((data) => {
+									console.log(getStore())
+									console.log(data)
+									setStore({ characters: [...getStore().characters, data.result] })
+								}).catch((err) => { console.log(err) })
+						}
+
+					})
+			},
+
+			getPlanets: async () => {
+				fetch('https://www.swapi.tech/api/planets')
+					.then((response) => response.json())
+					.then((data) => {
+						for (let item of data.results) {
+							fetch(item.url)
+								.then((response) => response.json())
+								.then((data) => {
+									console.log(getStore())
+									console.log(data)
+									setStore({ planets: [...getStore().planets, data.result] })
+								}).catch((err) => { console.log(err) })
+						}
+
+					})
 			}
+
+
 		}
+
 	};
 };
 
