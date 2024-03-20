@@ -42,14 +42,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 
-			getCharacters: () => {
+			getCharacters: async () => {
                fetch ('${getStore().apiBase}/people')
             .then ((response) => response.json())
 			.then ((data) => {
-				console.log(data.results)
+				for (let item of data.results){
+					fetch(item.url)
+					.then((response) => response.json())
+					.then((data) => {
+						setStore({characters: [...getStore().characters, data.results]})
+					}).catch((err)=> {console.log(err)})
+				}
+				
 			})
 			}
-		},
+		}
 	};
 };
 
