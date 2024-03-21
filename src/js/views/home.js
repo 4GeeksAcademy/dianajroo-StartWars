@@ -19,7 +19,7 @@ export const Home = () => {
 						return (
 							<div className="row" style={{ margin: '4px' }}>
 								<div className="card" style={{ width: '18rem', }}>
-									<img src={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`} className="card-img-top" alt="..." style={{ marginRight: '0px', marginLeft: '0px' }}></img>
+									<img src={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`} className="card-img-top" alt="..."></img>
 									<div className="card-body">
 										<h5 className="card-title"> {item.properties.name} </h5>
 										<p className="card-text"><b>Gender:</b> {item.properties.gender} </p>
@@ -28,8 +28,8 @@ export const Home = () => {
 
 
 										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between' }}>
-											<a href="#" className="btn btn-primary">Learn More!</a>
-											<a href="#" className="btn btn-primary"> c </a>
+											<a href="#" className="btn btn-dark">Learn More!</a>
+											<a href="#" className="btn btn-dark"> <i className="fa fa-heart text-warning" /> </a>
 										</div>
 									</div>
 								</div>
@@ -52,14 +52,14 @@ export const Home = () => {
 							<div className="row" style={{ margin: '4px' }}>
 								<div className="card" style={{ width: '18rem', }}>
 									<img src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`} className="card-img-top" alt="..." style={{ marginRight: '0px', marginLeft: '0px' }}></img>
-									<div className="card-body">
+									<div className="card-body-" >
 										<h5 className="card-title">  </h5>
-										<p className="card-text"><b>Population: {item.properties.population}</b>  </p>
 										<p className="card-text"><b>Terrain: {item.properties.terrain} </b>  </p>
-										
-										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between' }}>
-											<a href="#" className="btn btn-primary">Learn More!</a>
-											<a href="#" className="btn btn-primary"> c </a>
+										<p className="card-text"><b>Population: {item.properties.population}</b>  </p>
+
+										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}>
+											<a href="#" className="btn btn-dark">Learn More!</a>
+											<a href="#" className="btn btn-dark"> <i className="fa fa-heart text-warning" /> </a>
 										</div>
 									</div>
 								</div>
@@ -73,8 +73,8 @@ export const Home = () => {
 				</div>
 			</div>
 
-			
-			
+
+
 		</>
 	);
 }
