@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 
 			planets: [],
-			
+
+			favorites: [],
 
 			demo: [
 				{
@@ -76,7 +77,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 
 					})
-			}
+			},
+			addFavorite: (index) => {
+				console.log(index)
+
+				const store = getStore();
+				const favorite = store.characters.find((item) => {
+					return item.uid === index
+				})
+			       setStore({favorites: [...store.favorites, favorite]})
+			},
+
+			deleteFavorite: (index) => {
+				
+				const store = getStore();
+				const newFavorites = store.favorites.filter((char) => {
+					return char.uid !== index
+				})
+				setStore({favorites: newFavorites})
+			},
 
 
 		}

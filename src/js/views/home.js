@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
+import { Link } from "react-router-dom";
 
 
 export const Home = () => {
@@ -28,8 +29,10 @@ export const Home = () => {
 
 
 										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between' }}>
-											<a href="#" className="btn btn-dark">Learn More!</a>
-											<a href="#" className="btn btn-dark"> <i className="fa fa-heart text-warning" /> </a>
+										<Link to={`/characters/${item.uid}`}>
+												<span className="btn btn-dark"> Learn More!  </span>
+											</Link>
+											<div className="btn btn-dark" onClick={()=> actions.addFavorite(char.uid)}  > <i className="fa fa-heart text-warning" /> </div>
 										</div>
 									</div>
 								</div>
@@ -58,8 +61,10 @@ export const Home = () => {
 										<p className="card-text"><b>Population: {item.properties.population}</b>  </p>
 
 										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}>
-											<a href="#" className="btn btn-dark">Learn More!</a>
-											<a href="#" className="btn btn-dark"> <i className="fa fa-heart text-warning" /> </a>
+											<Link to={`/planets/${item.uid}`}>
+												<span className="btn btn-dark"> Learn More!  </span>
+											</Link>
+											<a href="#" className="btn btn-dark" onClick={()=> actions.addFavorite(char.uid)}> <i className="fa fa-heart text-warning" /> </a>
 										</div>
 									</div>
 								</div>
