@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export const Home = () => {
 	//funcion
-	const { store } = useContext(Context)
+	const { store, actions } = useContext(Context)
 
 	return (
 		<>
@@ -32,7 +32,7 @@ export const Home = () => {
 										<Link to={`/characters/${item.uid}`}>
 												<span className="btn btn-dark"> Learn More!  </span>
 											</Link>
-											<div className="btn btn-dark" onClick={()=> actions.addFavorite(char.uid)}  > <i className="fa fa-heart text-warning" /> </div>
+											<div className="btn btn-dark" onClick={()=> actions.addFavorite(item)}  > <i className="fa fa-heart text-warning" /> </div>
 										</div>
 									</div>
 								</div>
@@ -64,7 +64,7 @@ export const Home = () => {
 											<Link to={`/planets/${item.uid}`}>
 												<span className="btn btn-dark"> Learn More!  </span>
 											</Link>
-											<a href="#" className="btn btn-dark" onClick={()=> actions.addFavorite(char.uid)}> <i className="fa fa-heart text-warning" /> </a>
+											<a href="#" className="btn btn-dark" onClick={()=> actions.addFavorite(item.uid)}> <i className="fa fa-heart text-warning" /> </a>
 										</div>
 									</div>
 								</div>

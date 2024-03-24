@@ -33,7 +33,7 @@ export const Navbar = () => {
 						store.favorites.map((item) => {
 							return (
 								<li key={item.uid} className="d-flex justify-content-between" style={{width:"250px"}}>
-									<span className="dropdown-item">{item.name}</span>
+									<span className="dropdown-item">{item.properties.name}</span>
 									<span className="dropdown-item" onClick={() => actions.deleteFavorite(item.uid)}>🗑️</span>
 								</li>
 							)
