@@ -7,13 +7,14 @@ import { Context } from "../store/appContext";
 
     const {id} = useParams()
 
-    const [learnMorePlanets, setlearnMorePlanets] = useState(null)
+    const [learnMorePlanets, setLearnMorePlanets] = useState(null)
 
     const fetchLearnMorePlanets = async () => {
+        console.log(id)
         const response = await fetch(`https://www.swapi.tech/api/planets/${id}`)
         const data = await response.json()
-        setlearnMorePlanets(data.result)
-        
+        setLearnMorePlanets(data.result)
+        console.log(data.result)
     }
 
     useEffect(() => {
@@ -27,7 +28,7 @@ import { Context } from "../store/appContext";
             {learnMorePlanets && 
                 <div>
                     <h1>{learnMorePlanets.properties.name}</h1>
-                    <p>{learnMorePlanets.description}</p>
+                    <p>{learnMorePlanets.properties.description}</p>
                 </div>
             }
 

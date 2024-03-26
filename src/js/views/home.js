@@ -49,22 +49,22 @@ export const Home = () => {
 			<div className="container" style={{ marginTop: '50px' }}>
 				<h1 className="text-danger">Planets</h1>
 				<div className="carrusel">
-					{store.planets.map((item) => {
+					{store.planets.map((item2) => {
 
 						return (
 							<div className="row" style={{ margin: '4px' }}>
 								<div className="card" style={{ width: '18rem', }}>
-									<img src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`} className="card-img-top" alt="..." style={{ marginRight: '0px', marginLeft: '0px' }}></img>
+									<img src={`https://starwars-visualguide.com/assets/img/planets/${item2.uid}.jpg`} className="card-img-top" alt="..." style={{ marginRight: '0px', marginLeft: '0px' }}></img>
 									<div className="card-body-" >
 										<h5 className="card-title">  </h5>
-										<p className="card-text"><b>Terrain: {item.properties.terrain} </b>  </p>
-										<p className="card-text"><b>Population: {item.properties.population}</b>  </p>
+										<p className="card-text"><b>Terrain: {item2.properties.terrain} </b>  </p>
+										<p className="card-text"><b>Population: {item2.properties.population}</b>  </p>
 
 										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}>
-											<Link to={`/planets/${item.uid}`}>
+											<Link to={`/planetas/${item2.uid}`}>
 												<span className="btn btn-dark"> Learn More!  </span>
 											</Link>
-											<a href="#" className="btn btn-dark" onClick={()=> actions.addFavorite(item.uid)}> <i className="fa fa-heart text-warning" /> </a>
+											<a href="#" className="btn btn-dark" onClick={()=> actions.addFavorite(item2.uid)}> <i className="fa fa-heart text-warning" /> </a>
 										</div>
 									</div>
 								</div>
