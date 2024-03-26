@@ -61,7 +61,7 @@ export const Home = () => {
 										<p className="card-text"><b>Population: {item2.properties.population}</b>  </p>
 
 										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}>
-											<Link to={`/planetas/${item2.uid}`}>
+											<Link to={`/planets/${item2.uid}`}>
 												<span className="btn btn-dark"> Learn More!  </span>
 											</Link>
 											<a href="#" className="btn btn-dark" onClick={()=> actions.addFavorite(item2.uid)}> <i className="fa fa-heart text-warning" /> </a>
