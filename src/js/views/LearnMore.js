@@ -39,27 +39,15 @@ const LearnMore = () => {
                     </div>
                 }
             </div>
-            <div className="footer" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
+            <div className="footer" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}>
                 {learnMore &&
                     <div className="row"  >
-                        <h2>
-                            Name
-                            Birt Year
-                            Gender
-                            Height
-                            Skin Color
-                            Eye Color
-                           
-
-                        </h2>
-                        <h5 style={{ display: 'flex', justifyContent: 'space-between' }}>
-                            {learnMore.properties.name}
-                            {learnMore.properties.birth_year}
-                            {learnMore.properties.gender}
-                            {learnMore.properties.height}
-                            {learnMore.properties.skin_color}
-                            {learnMore.properties.eye_color}
-                        </h5>
+                        <div className="col-2"><h3>Name {learnMore.properties.name} </h3> </div>
+                        <div className="col-2"> <h3>Birth Year  {learnMore.properties.birth_year} </h3>      </div>
+                        <div className="col-2"> Gender {learnMore.properties.gender}   </div>
+                        <div className="col-2"> Height   {learnMore.properties.height}    </div>
+                        <div className="col-2"> Skin Color {learnMore.properties.skin_color}    </div>
+                        <div className="col-2">  Eye Color{learnMore.properties.eye_color}   </div>
                     </div>
                 }
             </div>
@@ -71,7 +59,6 @@ const LearnMore = () => {
 
 
 export default LearnMore;
-
 
 
 
