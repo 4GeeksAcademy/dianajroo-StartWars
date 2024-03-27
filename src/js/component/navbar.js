@@ -23,8 +23,8 @@ export const Navbar = () => {
 				</Link>
 				<div className="ml-auto">
 				<div className="dropdown d-flex justify-content-center">
-					<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-						Favorites: <span>{store.favorites.length}</span>
+					<button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+						Favorites: <span style={{color: 'yellow'}}>{store.favorites.length}</span>
 					</button>
 					
 					<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">

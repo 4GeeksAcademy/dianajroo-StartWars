@@ -64,7 +64,7 @@ export const Home = () => {
 											<Link to={`/planets/${item2.uid}`}>
 												<span className="btn btn-dark"> Learn More!  </span>
 											</Link>
-											<a href="#" className="btn btn-dark" onClick={()=> actions.addFavorite(item2.uid)}> <i className="fa fa-heart text-warning" /> </a>
+											<div className="btn btn-dark" onClick={()=> actions.addFavorite(item2)}  > <i className="fa fa-heart text-warning" /> </div>
 										</div>
 									</div>
 								</div>

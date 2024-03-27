@@ -82,10 +82,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log(index)
 
 				const store = getStore();
-				const favorite = store.characters.find((item) => {
-					return item.uid === index.uid
-				})
-			       setStore({favorites: [...store.favorites, favorite]})
+			       setStore({favorites: [...store.favorites, index]})
 			},
 
 			deleteFavorite: (index) => {
