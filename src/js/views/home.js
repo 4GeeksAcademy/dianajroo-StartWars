@@ -30,9 +30,9 @@ export const Home = () => {
 
 										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between' }}>
 										<Link to={`/characters/${item.uid}`}>
-												<span className="btn btn-primary"> Learn More!  </span>
+												<span className="btn btn-outline-primary"> Learn More!  </span>
 											</Link>
-											<div className="btn btn-primary" onClick={()=> {
+											<div className="btn btn-outline-warning" onClick={()=> {
 												const searchItem = store.favorites.find(search => search == item)
 												if (!searchItem){
 													
@@ -44,7 +44,7 @@ export const Home = () => {
 											
 											
 											
-											}}  > <i className={"fa fa-heart " + (store.favorites.find(search => search == item) ? "text-warning" : "text-light")} /> </div>
+											}}  > <i className={"fa fa-heart " + (store.favorites.find(search => search == item) ? "text-danger" : "text-warning")} /> </div>
 										</div>
 									</div>
 								</div>
@@ -74,9 +74,9 @@ export const Home = () => {
 
 										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}>
 											<Link to={`/planets/${item2.uid}`}>
-												<span className="btn btn-primary"> Learn More!  </span>
+												<span className="btn btn-outline-primary"> Learn More!  </span>
 											</Link>
-											<div className="btn btn-warning" onClick={()=> {
+											<div className="btn btn-outline-warning" onClick={()=> {
 												const searchItem = store.favorites.find(search => search == item2)
 												if (!searchItem){
 													
@@ -88,7 +88,7 @@ export const Home = () => {
 											
 											
 											
-											}}  > <i className={"fa fa-heart " + (store.favorites.find(search => search == item2) ? "text-warning" : "text-light")} /> </div>
+											}}  > <i className={"fa fa-heart " + (store.favorites.find(search => search == item2) ? "text-danger" : "text-warning")} /> </div>
 										</div>
 									</div>
 								</div>
