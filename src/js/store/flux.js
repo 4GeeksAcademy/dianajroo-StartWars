@@ -78,20 +78,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					})
 			},
-			addFavorite: (index) => {
-				console.log(index)
+			addFavorite: (item) => {
+				console.log(item)
 
 				const store = getStore();
-			       setStore({favorites: [...store.favorites, index]})
+				const searchItem = store.favorites.find( (search) => {
+                     return search == item 
+				})
+				if (!searchItem) 
+				setStore({ favorites: [...store.favorites, item] })
 			},
 
 			deleteFavorite: (index) => {
-				
+
 				const store = getStore();
 				const newFavorites = store.favorites.filter((char) => {
 					return char.uid !== index
 				})
-				setStore({favorites: newFavorites})
+				setStore({ favorites: newFavorites })
 			},
 
 

@@ -32,7 +32,19 @@ export const Home = () => {
 										<Link to={`/characters/${item.uid}`}>
 												<span className="btn btn-dark"> Learn More!  </span>
 											</Link>
-											<div className="btn btn-dark" onClick={()=> actions.addFavorite(item)}  > <i className="fa fa-heart text-warning" /> </div>
+											<div className="btn btn-dark" onClick={()=> {
+												const searchItem = store.favorites.find(search => search == item)
+												if (!searchItem){
+													
+													actions.addFavorite(item)
+												}
+												else {
+													actions.deleteFavorite(item.uid)
+												}
+											
+											
+											
+											}}  > <i className={"fa fa-heart " + (store.favorites.find(search => search == item) ? "text-warning" : "text-light")} /> </div>
 										</div>
 									</div>
 								</div>
