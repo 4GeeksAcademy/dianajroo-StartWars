@@ -76,7 +76,19 @@ export const Home = () => {
 											<Link to={`/planets/${item2.uid}`}>
 												<span className="btn btn-dark"> Learn More!  </span>
 											</Link>
-											<div className="btn btn-dark" onClick={()=> actions.addFavorite(item2)}  > <i className="fa fa-heart text-warning" /> </div>
+											<div className="btn btn-dark" onClick={()=> {
+												const searchItem = store.favorites.find(search => search == item2)
+												if (!searchItem){
+													
+													actions.addFavorite(item2)
+												}
+												else {
+													actions.deleteFavorite(item2.uid)
+												}
+											
+											
+											
+											}}  > <i className={"fa fa-heart " + (store.favorites.find(search => search == item2) ? "text-warning" : "text-light")} /> </div>
 										</div>
 									</div>
 								</div>
