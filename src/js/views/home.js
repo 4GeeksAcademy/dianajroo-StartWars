@@ -30,9 +30,9 @@ export const Home = () => {
 
 										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between' }}>
 										<Link to={`/characters/${item.uid}`}>
-												<span className="btn btn-dark"> Learn More!  </span>
+												<span className="btn btn-primary"> Learn More!  </span>
 											</Link>
-											<div className="btn btn-dark" onClick={()=> {
+											<div className="btn btn-primary" onClick={()=> {
 												const searchItem = store.favorites.find(search => search == item)
 												if (!searchItem){
 													
@@ -74,9 +74,9 @@ export const Home = () => {
 
 										<div className="botones" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}>
 											<Link to={`/planets/${item2.uid}`}>
-												<span className="btn btn-dark"> Learn More!  </span>
+												<span className="btn btn-primary"> Learn More!  </span>
 											</Link>
-											<div className="btn btn-dark" onClick={()=> {
+											<div className="btn btn-warning" onClick={()=> {
 												const searchItem = store.favorites.find(search => search == item2)
 												if (!searchItem){
 													
